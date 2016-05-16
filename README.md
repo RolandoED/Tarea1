@@ -1,5 +1,10 @@
 # Tarea 1
-Primera Tarea Programación 2
+Programación 2
+
+Rolando Esp D
+
+Ejercicio 01
+
 
 1.Investigación de C, C++ y C#.
 
