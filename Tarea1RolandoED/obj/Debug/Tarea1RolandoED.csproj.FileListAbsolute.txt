@@ -1,0 +1,11 @@
+c:\users\rolando\documents\visual studio 2013\Projects\Tarea1RolandoED\Tarea1RolandoED\bin\Debug\Tarea1RolandoED.exe.config
+c:\users\rolando\documents\visual studio 2013\Projects\Tarea1RolandoED\Tarea1RolandoED\bin\Debug\Tarea1RolandoED.exe
+c:\users\rolando\documents\visual studio 2013\Projects\Tarea1RolandoED\Tarea1RolandoED\bin\Debug\Tarea1RolandoED.pdb
+c:\users\rolando\documents\visual studio 2013\Projects\Tarea1RolandoED\Tarea1RolandoED\obj\Debug\Tarea1RolandoED.csprojResolveAssemblyReference.cache
+c:\users\rolando\documents\visual studio 2013\Projects\Tarea1RolandoED\Tarea1RolandoED\obj\Debug\Tarea1RolandoED.exe
+c:\users\rolando\documents\visual studio 2013\Projects\Tarea1RolandoED\Tarea1RolandoED\obj\Debug\Tarea1RolandoED.pdb
+C:\Users\Rolando\documents\visual studio 2013\Projects\Tarea1RolandoED\Tarea1RolandoED\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Rolando\documents\visual studio 2013\Projects\Tarea1RolandoED\Tarea1RolandoED\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Rolando\documents\visual studio 2013\Projects\Tarea1RolandoED\Tarea1RolandoED\bin\Debug\WebApiContrib.Formatting.JavaScriptSerializer.dll
+C:\Users\Rolando\documents\visual studio 2013\Projects\Tarea1RolandoED\Tarea1RolandoED\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Rolando\documents\visual studio 2013\Projects\Tarea1RolandoED\Tarea1RolandoED\bin\Debug\System.Net.Http.Formatting.xml

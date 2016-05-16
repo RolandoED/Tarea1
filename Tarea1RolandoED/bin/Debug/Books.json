@@ -1,0 +1,6 @@
+{
+  "movies":[
+    {"name": "el señor de los anillos"},
+    {"genre": "ficcion"}    
+  ]
+}
