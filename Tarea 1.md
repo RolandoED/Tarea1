@@ -24,7 +24,8 @@ Existen bastantes semejanzas entre C y C++, C# por otro lado al basarse en estos
     -    C# entre los 3 C# es un conjunto de los paradigmas anteriores, es estructurado, imperativo, Orientado a Objetos, Orientado a Eventos, Orientado a Procesos, Funcional, Genérico, reflectivo y concurrente.
 
 3.    Diferencias entre C, C++ y C# en cuanto a su estructura:
-    -    Tanto C y C++ se leen de arriba a abajo ya que son estructurales, por tanto todo elemento utilizado en el método main() debe haber sido antes creado ya sea en un header o al inicio del código, structs en C u objetos en C++ métodos y demás todo esto requiere un *Fordward Declaration*(Una declaración temprana)
+    -    Tanto C y C++ se leen de arriba a abajo ya que son estructurales, por tanto todo elemento utilizado en el método main() debe haber sido antes creado ya sea en un header o al inicio del código, structs en C u objetos en C++ métodos y demás todo esto requiere un *Fordward Declaration*(Una declaración temprana).
+    -    Mientras que por el lado de C#, este lenguaje permite la creación de métodos sin necesidad de *fordward declaration* y también puede agrupar funcionabilidad en archivos .DLL, cosas como acceso a una Base de Datos todos los métodos fijos se pueden guardar en un DLL para reducir la sobrecarga en ejecución, al crear más objetos de los necesarios.
 
 4.    Diferencias en cuanto a Estructuras.
     -    En C no existen objetos pero se puede emular haciendo uso de structs.

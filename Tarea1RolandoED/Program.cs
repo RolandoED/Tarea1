@@ -243,11 +243,11 @@ namespace Tarea1RolandoED
 
 
         #region  JSON ADD TO FILE
+
             //JavaScriptSerializer ser = new JavaScriptSerializer();
             //string outputJSON = ser.Serialize(arrayLibros);
             //File.WriteAllText("Output.json", outputJSON);
             //Console.ReadLine();
-
 
             ////JSON TESTS
             //String JSONString = File.ReadAllText("Books.json");
