@@ -318,6 +318,10 @@ Plumbing Commands
     write-tree
 
 
+![Some Examples](https://raw.githubusercontent.com/RolandoED/Tarea1/master/Images/Git1.png)
+
+![Some Examples](https://raw.githubusercontent.com/RolandoED/Tarea1/master/Images/Git2.png)
+
 ###LINKS DE INTERES
 
 Intro en 15 min
