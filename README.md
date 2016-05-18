@@ -9,7 +9,7 @@ Para ver los contenidos de la Tarea Escrita ver el archivo:
 
 **Tarea1.md**
 
-[/Tarea1.md](Tarea1.md)
+[/Tarea1.md](Tarea 1.md)
 
 
 1.	Investigación de C, C++ y C#.
