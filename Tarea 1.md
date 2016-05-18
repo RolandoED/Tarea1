@@ -35,7 +35,7 @@ Existen bastantes semejanzas entre C y C++, C# por otro lado al basarse en estos
     -    Tanto C y C++ hacen uso de Punteros(variables que se guardan en el modo par "espacio en memoria":"contenido")
     -    C# también puede hacer uso de punteros pero no es para lo que se creó el lenguaje.
     -    C no tiene variables del tipo String por que son objetos y C no hace uso de Objetos, C++ fué cuando ya se implementó una clase String.
-    -    C# contiene variables bastante complejas para el manejo de Redes, conexiones a Bases de Datos, Hashes como Sah1 CRC entre otros; y acá es donde se ve el enfoque a Web y forms de éste lenguaje comparado a C que se inventó como una versión portable de Ensamblador y C++ como una extensión de C que no fuese tan estática y pudiera hacer uso de Abstracción para reutilización de código con Objetos.
+    -    C# contiene variables bastante complejas para el manejo de Redes, conexiones a Bases de Datos, Hashes como SHA1 CRC entre otros; y acá es donde se ve el enfoque a Web y forms de éste lenguaje comparado a C que se inventó como una versión portable de Ensamblador y C++ como una extensión de C que no fuese tan estática y pudiera hacer uso de Abstracción para reutilización de código con Objetos.
 
 6.    Diferencias según el Compilador.
     -    C tiene como compiladores: GCC, Clang, Linux C, Mac C, Small-C, visual C++ y Ritchie C Compiler  entre otros.
@@ -56,9 +56,286 @@ Su desarrollo se inicia cuando existieron problemas con BitKeeper una herramient
 
 Por otro lado.
 
-
 ####Github:
 
 Github es una empresa que tomó el sistema de git y creó su propia implementación basándose en Git y dándole gran cantidad de valor agregado al software Git, al tener una interfaz gráfica, control por grupos que obtienen acceso al código y demás opciones para mejorar el acceso a Git como herramienta de uso cotidiano para programadores.
 
-##LINE ADDED FOR TESTING
+###Comandos más utilizados con MAN
+
+Inicializa o reinicializa un repositorio vacío.
+
+    git init
+
+
+Muestra que archivos estan ciendo trackeados y cuales no.
+
+    git status
+
+
+Agrega el archivo al los cambios
+
+    git add *filename* 
+
+
+Crea un nuevo commit con los cambios y un mensaje
+
+    git commit -m "message "
+
+
+Agrega todos los archivos tipo asterisco
+
+    git add '*.txt'
+
+
+Ver todo el log de commits en la forma 
+
+    git log
+
+
+	commit 3852b4db1634463d0bb4d267edb7b3f9cd02ace1
+	Author: Try Git <try_git@github.com>
+	Date: Sat Oct 10 08:30:00 2020 -0500
+	
+	Add all the octocat txt files
+	
+	commit b652edfd888cd3d5e7fcb857d0dabc5a0fcb5e28
+	Author: Try Git <try_git@github.com>
+	Date: Sat Oct 10 08:30:00 2020 -0500
+
+
+Agrega remotamente con origen URL destino
+
+    git remote add origin https://github.com/try-git/try_git.git
+
+
+
+Hace el Push de los cambios realizados a el origen 	antes especificado en URL
+
+    git push -u origin master
+
+
+> The -u tells Git to remember the parameters, so that next time we can simply run git push and Git will know what to do.
+
+Cuando hemos compartido el proyecto y varias personas han hecho sus propios commits con este comando llamamos la versión modificada con todos los cambios aplicados.
+
+    git pull origin master
+
+
+Para averiguar que está diferente desde el ultimo commit
+    git diff HEAD
+
+
+Se ve algo así 
+
+	diff --git a/octocat.txt b/octocat.txt
+	index 7d8d808..e725ef6 100644
+	--- a/octocat.txt
+	+++ b/octocat.txt
+	@@ -1 +1 @@
+	-A Tale of Two Octocats
+	+[mA Tale of Two Octocats and an Octodog
+
+#####CONCEPTO Staged Files son archivos que se le dijo a Git que vana ser commited pero todavía no se han posteado.
+
+Muestra la diferencia entre lo que esta staged y 
+
+    git diff --staged
+
+Reset archivos / o unstage archivos con el comando reset
+
+    git reset octofamily/octodog.txt
+
+Devolverse a como el archivo era antes
+
+    git checkout -- octocat.txt
+
+
+
+#####CONCEPTO Branch, version separada que solo una persona puede ver, cuando terminan pueden hacer un Merge y mezclar las 2 versiones.
+
+	git branch clean_up
+
+
+Ahora se ven los branches que han sido creados: Ahora se esta en 'clean_up'
+
+    git checkout clean_up
+
+
+Estando en el Branch que se llama clea_up se puede eliminar todos los .txt 
+
+    git rm '*.txt'
+
+	
+	rm 'blue_octocat.txt'
+	rm 'octocat.txt'
+	rm 'octofamily/baby_octocat.txt'
+	rm 'octofamily/momma_octocat.txt'
+	rm 'red_octocat.txt'
+
+	git commit -m "Remove all the cats"
+
+Remover todos los archivos en un nuevo commit
+
+	//RESULTADO
+	[clean_up 63540fe] Remove all the cats
+	5 files changed, 5 deletions(-)
+	delete mode 100644 blue_octocat.txt
+	delete mode 100644 octocat.txt
+	delete mode 100644 octofamily/baby_octocat.txt
+	delete mode 100644 octofamily/momma_octocat.txt
+	delete mode 100644 red_octocat.txt
+
+Ahora nos movemos de vuelta a master para poder hacer el merge de cambios
+
+	git checkout master
+
+#####Mostrar todos los branches con *$git show-branch* 
+
+Ahora para hacer un merge limpiando
+
+	git merge clean_up 
+
+
+Delete a branch 
+
+	git branch -d clean_up
+
+Ahora enviamos todo al repositorio
+
+	git branch -d clean_up
+
+---
+
+####Lista de comandos:
+ 
+Setup and Config
+
+    config
+    help
+
+Getting and Creating Projects
+
+    init
+    clone
+
+Basic Snapshotting
+
+    add
+    status
+    diff
+    commit
+    reset
+    rm
+    mv
+
+Branching and Merging
+
+    branch
+    checkout
+    merge
+    mergetool
+    log
+    stash
+    tag
+
+Sharing and Updating Projects
+
+    fetch
+    pull
+    push
+    remote
+    submodule
+
+Inspection and Comparison
+
+    show
+    log
+    diff
+    shortlog
+    describe
+
+Patching
+
+    apply
+    cherry-pick
+    diff
+    rebase
+    revert
+
+Debugging
+
+    bisect
+    blame
+    grep
+
+Email
+
+    am
+    apply
+    format-patch
+    send-email
+    request-pull
+
+External Systems
+
+    svn
+    fast-import
+
+Administration
+
+    clean
+    gc
+    fsck
+    reflog
+    filter-branch
+    instaweb
+    archive
+    bundle
+
+Server Admin
+
+    daemon
+    update-server-info
+
+Plumbing Commands
+
+    cat-file
+    commit-tree
+    count-objects
+    diff-index
+    for-each-ref
+    hash-object
+    ls-files
+    merge-base
+    read-tree
+    rev-list
+    rev-parse
+    show-ref
+    symbolic-ref
+    update-index
+    update-ref
+    verify-pack
+    write-tree
+
+
+###LINKS DE INTERES
+
+Intro en 15 min
+
+[https://try.github.io/levels/1/challenges/1](https://try.github.io/levels/1/challenges/1 "https://try.github.io/levels/1/challenges/1")
+
+Cheat Sheet
+
+[http://ndpsoftware.com/git-cheatsheet.html]("http://ndpsoftware.com/git-cheatsheet.html")
+
+Git the simple Guide 
+
+[http://rogerdudler.github.io/git-guide/](http://rogerdudler.github.io/git-guide/ "http://rogerdudler.github.io/git-guide/")
+
+Pro Git Book
+
+[https://git-scm.com/book/en/v2](https://git-scm.com/book/en/v2 "https://git-scm.com/book/en/v2")
+
+Another Cheat Sheet 
+
+[http://overapi.com/git](http://overapi.com/git "http://overapi.com/git")

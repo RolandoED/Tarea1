@@ -26,7 +26,8 @@ namespace Tarea1RolandoED
         static String nombreCliente = "";
         static String telefonoCliente = "";
         static String SEPARADOR = "-------------------------------------------------";
-        static String SEPARADOR2 = "=================================================";
+        static String SEPARADOR2 = "=================================================";        
+        static double PagaCon = 0;
         
         static List<string> libros = new List<string>(new string[] { 
                 "El Señor de los Anillos, Las dos torres",
@@ -95,7 +96,7 @@ namespace Tarea1RolandoED
             
             foreach (var item in array)
             {
-                output += item.Name.Substring(0,15)+"...\t" +
+                output += item.Name.Substring(0,13)+"...\t" +
                     item.amountBooks+"\t"+
                     "¢" + item.Price + "\t" +
                     "¢" + item.Price*item.amountBooks +
@@ -115,16 +116,39 @@ namespace Tarea1RolandoED
             }
             output += SEPARADOR + "\n";
             output += "Total Orden:\t\t\t\t¢" + totalOrden + "\n";
-            output += "Total Descuento:\t\t\t¢" + totalDescuento + "\n";
+            output += "Total Descuento:\t\t\t¢" + Math.Round(totalDescuento) + "\n";
             output += "Impuesto Venta:\t\t\t\t13%\n";
-            output += "Impuesto Total:\t\t\t\t¢" + ((totalOrden - totalDescuento) * 0.13) + "\n";
-            output += "Precio Neto:\t\t\t\t¢" + ((totalOrden - totalDescuento) * 1.13) + "\n";
+            output += "Impuesto Total:\t\t\t\t¢" + Math.Round((totalOrden - totalDescuento) * 0.13) + "\n";
+            output += "Precio Neto:\t\t\t\t¢" + Math.Round((totalOrden - totalDescuento) * 1.13) + "\n";
             output += SEPARADOR + "\n";
-            output += "Monto Recibido:\t¢" + totalOrden + "\n";
-            output += "Monto Cambio:\t¢" + totalOrden + "\n";
+            output += "Monto Recibido:\t¢" + PagaCon + "\n";
+            output += "Monto Cambio:\t¢" + Math.Round(PagaCon - ((totalOrden - totalDescuento) * 1.13)) + "\n";
             output += "=========================================\n";
             output += "Gracias por su Compra...\n";
             Console.WriteLine(output);
+        }
+
+        static double averiguarTotal(List<BookInvoice> array)
+        {
+            double totalOrden = 0;
+            double totalDescuento = 0;           
+            foreach (var item in array)
+            {
+                totalOrden += item.Price * item.amountBooks;
+                //Descuento acorde al tipo de libro
+                if (item.Category.Equals("infantil"))
+                    totalDescuento += (item.Price * item.amountBooks) * 0.05;
+                else if (item.Category.Equals("misterio"))
+                    totalDescuento += (item.Price * item.amountBooks) * 0.10;
+                else if (item.Category.Equals("fantasia"))
+                    totalDescuento += (item.Price * item.amountBooks) * 0.15;
+                else if (item.Category.Equals("educativos"))
+                    totalDescuento += (item.Price * item.amountBooks) * 0.20;
+                else
+                    totalDescuento += (item.Price * item.amountBooks) * 0.25;
+            }
+            return totalOrden - totalDescuento;
+            
         }
 
 
@@ -165,9 +189,24 @@ namespace Tarea1RolandoED
                     clienteInfo();
                 else if (datoIngresado.ToLower().Equals("facturar"))
                 {
-                    facturar(arrayfactura, numfactura);
-                    numfactura++;
-                    arrayfactura.Clear();
+                    //Muestra cuanto debe
+                    double TotalaPagar = Math.Round(averiguarTotal(arrayfactura) * 1.13);
+                    Console.WriteLine("El total con descuento + IVA es : ¢ " + TotalaPagar);
+                    Console.WriteLine("Ingrese con cuanto paga: ¢ ");
+                    try
+                    {
+                        PagaCon = double.Parse(Console.ReadLine());
+                        if (PagaCon < TotalaPagar) throw new Exception("Error: Cantidad Menor al monto a Pagar");
+                        facturar(arrayfactura, numfactura);
+                        numfactura++;
+                        arrayfactura.Clear();
+                        PagaCon = 0;
+                    }
+                    catch (System.Exception e)
+                    {
+                        Console.WriteLine("ERROR" + e.Message);
+                        //MessageBox.Show("" + e.Message);
+                    }
                 }
                 else
                 {
