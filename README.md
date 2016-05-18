@@ -1,13 +1,17 @@
 # Tarea 1
-Programación 2
+---
+
+Programación 2 UH Miercoles Noche
 
 Rolando Esp D
 
-Ejercicio 01
+Para ver los contenidos de la Tarea Escrita ver:
 
+**Tarea1.md**
+[https://github.com/RolandoED/Tarea1/blob/master/Tarea%201.md]("Tarea1.md")
 
-1.Investigación de C, C++ y C#.
+1.	Investigación de C, C++ y C#.
+2.	Investigación de Git y Github.
+3.	Pequeña aplicación de control de ventas Libreria.
 
-2.Investigación de Git y Github.
-
-3.Pequeña aplicación de control de ventas Libreria.
+---
