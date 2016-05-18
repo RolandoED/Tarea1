@@ -3,7 +3,7 @@
 
 Programación 2 UH Miercoles Noche
 
-Rolando Esp D
+Rolando Espinoza Díaz
 
 Para ver los contenidos de la Tarea Escrita ver el archivo:
 
