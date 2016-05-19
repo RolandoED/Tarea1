@@ -79,7 +79,7 @@ namespace Tarea1RolandoED
             Console.WriteLine("Ingrese el nombre del cliente");
             nombreCliente = Console.ReadLine();
             Console.Write("El nombre es: \n " + nombreCliente + "\n");
-            Console.WriteLine("Ingrese la cedula del cliente");
+            Console.WriteLine("Ingrese el telefono del cliente");
             telefonoCliente = Console.ReadLine();
         }
 
